@@ -1,0 +1,44 @@
+{
+  "name": "file-uploader-api",
+  "version": "1.0.0",
+  "main": "server/app.js",
+  "dependencies": {
+    "async": "^1.4.2",
+    "aws-sdk": "^2.2.33",
+    "blanket": "^1.2.3",
+    "bluebird": "^2.10.2",
+    "body-parser": "~1.15.1",
+    "compression": "~1.6.1",
+    "config": "^1.21.0",
+    "cookie-parser": "~1.0.1",
+    "cors": "^2.7.1",
+    "crypto-js": "^3.1.5",
+    "csurf": "^1.8.3",
+    "delayed-stream": "^1.0.0",
+    "errno": "^0.1.4",
+    "errorhandler": "~1.0.0",
+    "etag": "^1.7.0",
+    "expect.js": "^0.3.1",
+    "express": "~4.11.1",
+    "glob": "^5.0.15",
+    "lodash": "3.2.0",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.4.6",
+    "qs": "^2.3.3",
+    "redis": "^0.12.1",
+    "request": "^2.72.0",
+    "serve-favicon": "~2.0.1",
+    "useragent": "^2.1.9",
+    "winston": "*",
+    "yargs": "^3.30.0"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "start": "node server/app.js",
+    "debug": "node --debug server/app.js",
+    "watch": "forever -w server/app.js"
+  },
+  "private": true
+}

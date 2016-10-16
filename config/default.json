@@ -1,0 +1,36 @@
+{
+    "envPrefix" : "APP",
+    "env": "production",
+    "port": 80,
+    "requestTimeout": 5000,
+
+    "is_server_https" : false,
+    "origins"         : null,
+    "host"            : "localhost",
+
+    "seedDB": false,
+    "db": {
+        "client"    : "mongodb",
+        "connection": {
+            "host"    : "media-db",
+            "port"    : 27017,
+            "url"     : "mongodb://localhost/media-db"
+        },
+        "migrations": {
+            "tableName": "migrations"
+        },
+        "pool"      : {
+            "min": 2,
+            "max": 100
+        }
+    },
+
+    "ssh": {
+        "details": {}
+    },
+
+    "cdn": {
+        "legacyKey": "legacy/flamingo_doc/formable_images"
+    }
+
+}
