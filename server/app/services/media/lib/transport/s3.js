@@ -13,7 +13,7 @@ var Bluebird    = require('bluebird');
 var util        = require('util');
 var _           = require('lodash');
 var stream      = require('stream');
-var MediaObject = require(global.appRoot + '/src/lib/uploadObject');
+var MediaObject = require(global.appRoot + '/app/services/media/lib/uploadObject');
 const fileType  = require('file-type');
 
 // Bootstrap AWS-SDK service for S3 use
@@ -29,14 +29,14 @@ var s3 = (function (AWS) {
         // Otherwise look for the profile
     } else {
         AWS.config.credentials = new AWS.SharedIniFileCredentials({
-            profile: global.config.transport.aws.s3Profile
+            profile: global.config.get('transport.aws.s3Profile')
         });
     }
 
     // Initialise s3 bucket
     return new AWS.S3({
         params: {
-            Bucket: global.config.transport.aws.s3Bucket,
+            Bucket: global.config.get('transport.aws.s3Bucket'),
             ACL   : 'private'
         }
     });

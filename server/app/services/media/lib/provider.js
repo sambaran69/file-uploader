@@ -40,6 +40,7 @@ class MediaProvider {
               return reject(err);
           }
           resolve(response);
+        });
       });
     }
 

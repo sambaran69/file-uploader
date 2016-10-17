@@ -3,6 +3,7 @@
     "env": "production",
     "port": 3000,
     "requestTimeout": 5000,
+    "uploader"  : "s3",
 
     "is_server_https" : false,
     "origins"         : null,
@@ -31,6 +32,13 @@
 
     "cdn": {
         "legacyKey": "legacy/flamingo_doc/formable_images"
-    }
+    },
+
+    "transport": {
+      "aws": {
+          "s3Profile": "default",
+          "s3Bucket" : "media-store-dev"
+      }
+  }
 
 }

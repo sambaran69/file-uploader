@@ -5,7 +5,7 @@ const multer    = require('multer');
 const _         = require('lodash');
 const payload   = require(global.appRoot + '/app/services/payload').v1;
 const User      = require(global.appRoot + '/app/services/user');
-const Media      = require(global.appRoot + '/app/services/media');
+const Media     = require(global.appRoot + '/app/services/media');
 const upload    = multer({inMemory: true});
 const router    = express.Router();
 

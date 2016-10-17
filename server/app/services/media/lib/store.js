@@ -22,7 +22,7 @@ class MediaStore {
             this.transport = require('./transport/' + transport);
         } catch (e) {
             if (e.code === 'MODULE_NOT_FOUND') {
-                global.logger.error(new Error('The media transport passed \'' + transport + '\' is invalid.'));
+                console.log(new Error('The media transport passed \'' + transport + '\' is invalid.'));
             }
         }
     }

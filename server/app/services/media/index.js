@@ -7,7 +7,7 @@ class MediaService {
      *
      * @returns {MediaProvider}
      */
-    static get provider() {
+    static provider() {
         return require('./lib/provider');
     }
 
@@ -16,7 +16,7 @@ class MediaService {
      *
      * @returns {MediaTransactor}
      */
-    static get trans() {
+    static trans() {
         return require('./lib/trans');
     }
 
@@ -25,7 +25,7 @@ class MediaService {
      *
      * @returns {MediaStream}
      */
-    static get stream() {
+    static stream() {
         return require('./lib/stream');
     }
 

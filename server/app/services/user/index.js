@@ -7,7 +7,7 @@ class UserService {
      *
      * @returns {MediaProvider}
      */
-    static get provider() {
+    static provider() {
         return require('./lib/provider');
     }
 
