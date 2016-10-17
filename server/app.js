@@ -1,17 +1,14 @@
 'use strict';
 
-// Environment Defaults
-process.env.NODE_ENV = process.env.NODE_ENV || 'local';
-
 // Globals
 global.appRoot   = require('path').resolve(__dirname);
 global.config    = require('config');
 
 // Initialise modules
+const mongoose    = require('mongoose');
 const express     = require('express');
 const app         = express();
 const server      = require('http').createServer(app);
-const io          = socket.listen(server);
 const connUrl     = global.config.get('db.connection.url');
 
 // Initialise components
@@ -21,16 +18,12 @@ const connUrl     = global.config.get('db.connection.url');
 
 mongoose.connect(connUrl, (err) => {
     if (err) {
+      console.log(err);
+        console.log('Node server not able to connect to Mongo DB. Exiting Service...!');
         process.exit(1);
     } else {
-        // Set default origin headers
-        const origins = global.config.get('origins');
-        if (origins) {
-          io.set('origins', origins);
-        }
-
         // Middleware
-        require('./config/express')(app);
+        require('./express')(app);
         require('./routes')(app);
 
         // Start server

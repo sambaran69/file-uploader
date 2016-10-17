@@ -31,4 +31,4 @@ class MediaService {
 
 }
 
-module.exports = VendorService;
+module.exports = MediaService;
